@@ -2,7 +2,7 @@
 
 [![Buy Me a Coffee](http://static.tonybogdanov.com/github/coffee.svg)](http://ko-fi.co/1236KUKJNC96B)
 
-[Demo & Documentation](http://tonybogdanov.github.io/poly-crypt/bower_components/poly-crypt/index.html)
+[Demo & Documentation](http://tonybogdanov.github.io/poly-behavior-translatable/bower_components/poly-behavior-translatable/index.html)
 
 `Poly.TranslatableBehavior` provides a [Polymer](https://polymer-project.org) [behavior](https://www.polymer-project.org/1.0/docs/devguide/behaviors) for "quick and dirty" internationalization.
 
