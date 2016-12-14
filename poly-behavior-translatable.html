@@ -79,7 +79,7 @@
          * @param key
          * @returns {*}
          */
-        translate: function(key) {
+        trans: function(key) {
             if(!this.hasTranslation(key)) {
                 return;
             }
@@ -87,7 +87,7 @@
         },
 
         /**
-         * Same as `translate()` except you can specify a fallback translation string as second argument in case the
+         * Same as `trans()` except you can specify a fallback translation string as second argument in case the
          * specified `key` doesn't exist.
          *
          * Don't forget to pass `translations` as a third argument in data bindings to inject it as dependency,
@@ -97,7 +97,7 @@
          * @param fallback
          */
         translateWithFallback: function(key, fallback) {
-            var translation = this.translate(key);
+            var translation = this.trans(key);
             return 'undefined' == typeof translation ? fallback : translation;
         },
 

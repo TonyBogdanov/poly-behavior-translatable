@@ -6,6 +6,10 @@
 
 `Poly.TranslatableBehavior` provides a [Polymer](https://polymer-project.org) [behavior](https://www.polymer-project.org/1.0/docs/devguide/behaviors) for "quick and dirty" internationalization.
 
+### NOTE
+
+As of 14 Dec 2016, the main `translate` method has been renamed to `trans` since it interferes with a method already present in the Polymer core.
+
 ## Dependencies
 
 Element dependencies are managed via [Bower](http://bower.io/). You can
