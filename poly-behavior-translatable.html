@@ -24,10 +24,7 @@
              */
             translations: {
                 type: Object,
-                notify: true,
-                value: function() {
-                    return {};
-                }
+                notify: true
             }
         },
 
@@ -48,7 +45,7 @@
          * @returns {boolean}
          */
         hasTranslation: function(key) {
-            return this.translations.hasOwnProperty(key);
+            return 'object' == typeof this.translations && this.translations.hasOwnProperty(key);
         },
 
         /**
@@ -60,9 +57,11 @@
          */
         setTranslation: function(key, translation) {
             var newTranslations = {};
-            for(var oldKey in this.translations) {
-                if(this.translations.hasOwnProperty(oldKey)) {
-                    newTranslations[oldKey] = this.translations[oldKey];
+            if('object' == typeof this.translations) {
+                for(var oldKey in this.translations) {
+                    if(this.translations.hasOwnProperty(oldKey)) {
+                        newTranslations[oldKey] = this.translations[oldKey];
+                    }
                 }
             }
             newTranslations[key] = translation;
