@@ -1,5 +1,6 @@
 <!-- Dependencies -->
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../poly-vendor-sprintfjs/poly-vendor-sprintfjs.html">
 
 <script>
     window.Poly = window.Poly || {};
@@ -147,6 +148,22 @@
                 }
             }
             throw "Poly.TranslatableBehavior: You must pass a valid plural integer to translatePluralFallback()";
+        },
+
+        /**
+         * Retrieves a translation string for the specified `key` if it exists. Returns `undefined` otherwise.
+         *
+         * Uses the sprintf.js library to replace any tokens found in the translation of the key with values passed
+         * as second, third etc. argument, except the last one, which should always be the `translations` dependency.
+         *
+         * @param key
+         * @returns {*}
+         */
+        translateReplace: function(key) {
+            if(!this.hasTranslation(key)) {
+                return;
+            }
+            return sprintf.apply(null, [this.trans(key)].concat(Array.from(arguments).slice(1).slice(0, -1)));
         }
     };
 </script>

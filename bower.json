@@ -5,7 +5,9 @@
     "Tony Bogdanov <tonybogdanov@gmail.com>"
   ],
   "description": "A Polymer behavior for \"quick and dirty\" internationalization",
-  "keywords": ["web-components"],
+  "keywords": [
+    "web-components"
+  ],
   "main": "poly-behavior-translatable.html",
   "license": "MIT",
   "ignore": [
@@ -16,7 +18,8 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "^1.6.1"
+    "polymer": "^1.6.1",
+    "poly-vendor-sprintfjs": "*"
   },
   "devDependencies": {
     "iron-component-page": "^1.1.7"
