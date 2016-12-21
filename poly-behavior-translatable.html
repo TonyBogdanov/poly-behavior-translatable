@@ -163,7 +163,7 @@
             if(!this.hasTranslation(key)) {
                 return;
             }
-            return sprintf.apply(null, [this.trans(key)].concat(Array.from(arguments).slice(1).slice(0, -1)));
+            return sprintf.apply(null, [this.trans(key)].concat(Array.from(arguments).slice(1)));
         }
     };
 </script>
