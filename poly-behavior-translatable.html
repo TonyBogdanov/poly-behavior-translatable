@@ -35,6 +35,14 @@
             }
             return this.translateWithFallback(keys[plural], fallback);
         },
+        
+        _toArray: function(value) {
+            var array = [];
+            for(var i = 0; i < value.length; i++) {
+                array.push(value[i]);
+            }
+            return array;
+        },
 
         /**
          * Determines whether a translation for the specified `key` exists and returns a `Boolean`.
@@ -122,7 +130,7 @@
         translatePlural: function() {
             for(var i = 0; i < arguments.length; i++) {
                 if(!isNaN(arguments[i])) {
-                    return this._translatePlural(arguments[i], Array.from(arguments).slice(0, i));
+                    return this._translatePlural(arguments[i], this._toArray(arguments).slice(0, i));
                 }
             }
             throw "Poly.TranslatableBehavior: You must pass a valid plural integer to translatePlural()";
@@ -144,7 +152,7 @@
                         throw "Poly.TranslatableBehavior: You must pass a valid translation string immediately" +
                         " after the plural integer to translatePluralFallback()";
                     }
-                    return this._translatePlural(arguments[i], Array.from(arguments).slice(0, i), arguments[i + 1]);
+                    return this._translatePlural(arguments[i], this._toArray(arguments).slice(0, i), arguments[i + 1]);
                 }
             }
             throw "Poly.TranslatableBehavior: You must pass a valid plural integer to translatePluralFallback()";
@@ -163,7 +171,7 @@
             if(!this.hasTranslation(key)) {
                 return;
             }
-            return sprintf.apply(null, [this.trans(key)].concat(Array.from(arguments).slice(1)));
+            return sprintf.apply(null, [this.trans(key)].concat(this._toArray(arguments).slice(1)));
         }
     };
 </script>
